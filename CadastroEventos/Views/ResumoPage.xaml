@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventos.Views.ResumoPage"
+             NavigationPage.HasNavigationBar="False"
+             Title="ResumoPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="20" VerticalOptions="Center" >
+            <Frame BackgroundColor="Black">
+                <Label Text="Resumo do Evento" FontSize="Title" HorizontalOptions="Center" TextColor="white"/>
+            </Frame>
+            <Frame BorderColor="#512BD4" CornerRadius="10" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    
+                    <Label Text="{Binding Nome}" FontSize="Subtitle" FontAttributes="Bold " />
+                    
+                    <!-- Período -->
+                    <Label Text="{Binding DataInicio, StringFormat='Início: {0:dd/MM/yyyy}'}" />
+                    <Label Text="{Binding DataTermino, StringFormat='Término: {0:dd/MM/yyyy}'}" />
+                    <Label Text="{Binding DuracaoDias, StringFormat='Duração: {0} dias'}" />
+
+                    <!-- Local -->
+                    <Label Text="{Binding Local, StringFormat='Local: {0}'}" />
+
+                    <!-- Custo -->
+                    <Label Text="{Binding NumeroParticipantes, StringFormat='Participantes: {0}'}" />
+                    <Label Text="{Binding CustoPorParticipante, StringFormat='Custo por pessoa: {0:C}'}" />
+                    <Label Text="{Binding CustoTotal, StringFormat='Custo total: {0:C}'}" FontAttributes="Bold" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Botão Voltar -->
+            <Button Text="Voltar" Clicked="OnVoltarClicked" HorizontalOptions="Center" WidthRequest="200" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

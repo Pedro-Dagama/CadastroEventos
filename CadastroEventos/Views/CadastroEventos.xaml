@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventos.Views.CadastroEventos"
+             NavigationPage.HasNavigationBar="False"
+             Title="CadastroEventos">
+    <ScrollView>
+        
+            <VerticalStackLayout Spacing="15" Padding="20">
+           
+                <!-- Título -->
+                <Frame BackgroundColor="Black" >
+                    <Label Text="Cadastro de Evento" TextColor="White" FontSize="Title" HorizontalOptions="Center" />
+                </Frame>
+
+                <!-- Nome do Evento -->
+                
+                <Label Text="Nome do Evento:"  />
+                <Entry Placeholder="Ex: Conferência de TI" Text="{Binding Nome}" />
+
+                <!-- Data de Início -->
+                <Label Text="Data de Início:" />
+                <DatePicker Date="{Binding DataInicio}" Format="dd/MM/yyyy" />
+
+                <!-- Data de Término -->
+                <Label Text="Data de Término:" />
+                <DatePicker Date="{Binding DataTermino}" Format="dd/MM/yyyy" />
+
+                <!-- Número de Participantes -->
+                <Label Text="Número de Participantes:" />
+                <Entry Placeholder="Ex: 100" Keyboard="Numeric" Text="{Binding NumeroParticipantes}" />
+
+                <!-- Local do Evento -->
+                <Label Text="Local do Evento:" />
+                <Entry Placeholder="Ex: Centro de Convenções" Text="{Binding Local}" />
+
+                <!-- Custo por Participante -->
+                <Label Text="Custo por Participante (R$):" />
+                <Entry Placeholder="Ex: 50,00" Keyboard="Numeric" Text="{Binding CustoPorParticipante}" />
+
+                <!-- Botões -->
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                    <Button Text="Salvar" Clicked="OnSalvarClicked" BackgroundColor="#512BD4" TextColor="White" />
+                    <Button Text="Limpar" Clicked="OnLimparClicked" Grid.Column="1" BackgroundColor="#DDDDDD" />
+                </Grid>
+      
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
